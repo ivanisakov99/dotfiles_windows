@@ -4,5 +4,13 @@
 
 - clean: ['~']
 
+- link:
+    ~/Documents/WindowsPowerShell/:
+        create: true
+        glob: true
+        path: powershell_config/**
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+
+#   - [powershell -windowstyle hidden .\dependencies.ps1, Installing dependencies]
