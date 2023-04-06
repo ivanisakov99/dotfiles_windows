@@ -1,17 +1,13 @@
 # # Check to see if we are currently running "as Administrator"
-if (!(Verify-Elevated)) {
-   $newProcess = new-object System.Diagnostics.ProcessStartInfo "PowerShell";
-   $newProcess.Arguments = $myInvocation.MyCommand.Definition;
-   $newProcess.Verb = "runas";
-   [System.Diagnostics.Process]::Start($newProcess);
+# if (!(Verify-Elevated)) {
+#    $newProcess = new-object System.Diagnostics.ProcessStartInfo "PowerShell";
+#    $newProcess.Arguments = $myInvocation.MyCommand.Definition;
+#    $newProcess.Verb = "runas";
+#    [System.Diagnostics.Process]::Start($newProcess);
 
-   exit
-}
+#    exit
+# }
 
-
-### Update Help for Modules
-Write-Host "Updating Help..." -ForegroundColor "Yellow"
-Update-Help -Force
 
 
 ### Package Providers
@@ -21,33 +17,18 @@ Get-PackageProvider NuGet -Force | Out-Null
 
 ### Install PowerShell Modules
 Write-Host "Installing PowerShell Modules..." -ForegroundColor "Yellow"
-Install-Module Posh-Git -Scope CurrentUser -Force
+
 Install-Module PSWindowsUpdate -Scope CurrentUser -Force
 
 # system and cli
 # winget install Microsoft.WebPICmd                        --silent --accept-package-agreements
-winget install Git.Git -e --silent --accept-package-agreements --override "/VerySilent
-                                                                            /NoRestart
-                                                                            /o:PathOption=CmdTools
-                                                                            /o:BashTerminalOption=ConHost
-                                                                            /o:CRLFOption=CRLFAlways
-                                                                            /o:CURLOption=WinSSL
-                                                                            /o:SSHOption=ExternalOpenSSH
-                                                                            /o:EnableSymlinks=Enabled
-                                                                            /o:EditorOption=VisualStudioCode
-                                                                            /o:GitPullBehaviorOption=Rebase
-                                                                            /Components=""icons,assoc,assoc_sh,gitlfs,windowsterminal"""
-winget install --id GitHub.cli
+
 
 
 # winget install OpenJS.NodeJS                             --silent --accept-package-agreements
 # winget install Python.Python.3                           --silent --accept-package-agreements
 # winget install RubyInstallerTeam.Ruby                    --silent --accept-package-agreements
 
-# # browsers
-# winget install Google.Chrome                             --silent --accept-package-agreements
-# winget install Mozilla.Firefox                           --silent --accept-package-agreements
-# winget install Opera.Opera                               --silent --accept-package-agreements
 
 # # dev tools and frameworks
 # winget install Microsoft.PowerShell                      --silent --accept-package-agreements

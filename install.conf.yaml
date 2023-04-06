@@ -2,15 +2,40 @@
     link:
       relink: true
 
-- clean: ['~']
+# - clean: ['~']
+# - clean: ['~/Documents/PowerShell/components']
 
 - link:
+    # Regular Powershell
+    ~/Documents/WindowsPowerShell/profile.ps1:
+        create: true
+        path: profiles/profile.ps1
     ~/Documents/WindowsPowerShell/:
         create: true
         glob: true
-        path: powershell_config/**
+        path: common_components/*
+
+    # Powershell 7
+    ~/Documents/PowerShell/profile.ps1:
+        create: true
+        path: profiles/profile.ps1
+    ~/Documents/PowerShell/:
+        create: true
+        glob: true
+        path: common_components/*
+
+    # Visual Studio
+    ~/Documents/WindowsPowerShell/NuGet_profile.ps1:
+        path: profiles/NuGet_profile.ps1
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    # - [git submodule update --init --recursive, Installing submodules]
 
-#   - [powershell -windowstyle hidden .\dependencies.ps1, Installing dependencies]
+    # - [powershell]
+
+  # - [powershell -windowstyle hidden .\dependencies.ps1, Installing dependencies]
+  # - [powershell -Command winget install Microsoft.PowerShell]
+  # - [pwsh -Command Install-Module Posh-Git -Scope CurrentUser -Force, Installing dependencies]
+  # - [powershell -Command Install-Module Posh-Git -Scope AllUsers -Force, Installing dependencies]
+  # - [powershell -Command Verify-Elevated] works
+  # - [pwsh -h] works
