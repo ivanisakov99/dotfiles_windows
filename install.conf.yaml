@@ -4,5 +4,11 @@
 
 - clean: ['~']
 
+- link:
+    # Regular Powershell
+    ~/Documents/WindowsPowerShell/profile.ps1:
+        create: true
+        path: profiles/profile.ps1
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
