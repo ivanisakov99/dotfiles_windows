@@ -29,9 +29,9 @@
         path: profiles/NuGet_profile.ps1
 
 - shell:
-    # - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
 
-    # - [powershell]
+    - [powershell .\dependencies\developer_tools.ps1, Installing developer tools]
 
   # - [powershell -windowstyle hidden .\dependencies.ps1, Installing dependencies]
   # - [powershell -Command winget install Microsoft.PowerShell]
@@ -39,3 +39,4 @@
   # - [powershell -Command Install-Module Posh-Git -Scope AllUsers -Force, Installing dependencies]
   # - [powershell -Command Verify-Elevated] works
   # - [pwsh -h] works
+

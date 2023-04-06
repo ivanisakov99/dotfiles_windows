@@ -1,4 +1,5 @@
-
+winget install Python.Python.3 --silent --accept-package-agreements
+winget install OpenJS.NodeJS --silent --accept-package-agreements
 
 # Git
 winget install Git.Git -e --silent --accept-package-agreements --override "/VerySilent
@@ -16,3 +17,4 @@ Install-Module Posh-Git -Force
 
 # GitHub CLI
 winget install --id GitHub.cli
+
