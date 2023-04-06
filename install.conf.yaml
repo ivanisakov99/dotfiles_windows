@@ -10,5 +10,12 @@
         create: true
         path: profiles/profile.ps1
 
+    # Powershell 7
+    ~/Documents/PowerShell/profile.ps1:
+        create: true
+        path: profiles/profile.ps1
+
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
+
+    - [powershell .\dependencies\developer_tools.ps1, Installing developer tools]
