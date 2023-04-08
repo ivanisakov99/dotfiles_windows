@@ -1,8 +1,16 @@
 # . $PROFILE
 
-$Key = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" 
-$ConsentPromptBehaviorAdmin_Name = "ConsentPromptBehaviorAdmin" 
-$PromptOnSecureDesktop_Name = "PromptOnSecureDesktop" 
+winget install python3 --silent --accept-package-agreements
 
-$ConsentPromptBehaviorAdmin_Value = Get-RegistryValue $Key $ConsentPromptBehaviorAdmin_Name 
-$PromptOnSecureDesktop_Value = Get-RegistryValue $Key $PromptOnSecureDesktop_Name 
+# Git
+winget install Git.Git -e --silent --accept-package-agreements --override "/VerySilent
+                                                                            /NoRestart
+                                                                            /o:PathOption=CmdTools
+                                                                            /o:BashTerminalOption=ConHost
+                                                                            /o:CRLFOption=CRLFAlways
+                                                                            /o:CURLOption=WinSSL
+                                                                            /o:SSHOption=ExternalOpenSSH
+                                                                            /o:EnableSymlinks=Enabled
+                                                                            /o:EditorOption=VisualStudioCode
+                                                                            /o:GitPullBehaviorOption=Rebase
+                                                                            /Components=""icons,assoc,assoc_sh,gitlfs,windowsterminal"""
