@@ -6,6 +6,8 @@
 # - clean: ['~/Documents/PowerShell/components']
 
 - link:
+    ~/.gitconfig:
+
     # Regular Powershell
     ~/Documents/WindowsPowerShell/profile.ps1:
         create: true
