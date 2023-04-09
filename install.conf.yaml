@@ -9,13 +9,19 @@
     ~/Documents/WindowsPowerShell/profile.ps1:
         create: true
         path: profiles/profile.ps1
+    ~/Documents/WindowsPowerShell/Modules:
 
     # Powershell 7
     ~/Documents/PowerShell/profile.ps1:
         create: true
         path: profiles/profile.ps1
+    ~/Documents/PowerShell/Modules:
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
 
-    - [powershell .\dependencies\developer_tools.ps1, Installing developer tools]
+    - [powershell -file ./utils/disable_UAC.ps1, Turning off UAC for period of installation]
+
+    - [powershell -file ./dependencies/developer_tools.ps1, Installing developer tools]
+
+    - [powershell -file ./utils/enable_UAC.ps1, Turning UAC back on]
