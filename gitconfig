@@ -1,0 +1,25 @@
+[user]
+	email = 60196280+ivanisakov99@users.noreply.github.com
+	name = Ivan Isakov
+[diff "astextplain"]
+	textconv = astextplain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http]
+	sslBackend = schannel
+[core]
+	autocrlf = true
+	editor = code --wait
+	fscache = true
+	symlinks = true
+[pull]
+	rebase = true
+[credential]
+	helper = manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[init]
+	defaultBranch = master
