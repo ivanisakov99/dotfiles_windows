@@ -23,6 +23,10 @@
         glob: true
         path: Modules/**
 
+    # Visual Studio
+    ~/Documents/WindowsPowerShell/NuGet_profile.ps1:
+        path: profiles/NuGet_profile.ps1
+
     ~/.gitconfig:
     ~/.editorconfig:
 

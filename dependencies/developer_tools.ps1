@@ -15,3 +15,5 @@ winget install Microsoft.VisualStudio.2022.Professional --silent --accept-packag
 winget install Vim.Vim --silent --accept-package-agreements
 
 winget install OpenJS.NodeJS --silent --accept-package-agreements
+
+Get-PackageProvider NuGet -Force | Out-Null
