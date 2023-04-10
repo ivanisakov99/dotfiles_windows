@@ -10,6 +10,5 @@ winget install Git.Git -e --silent --accept-package-agreements --override "/Very
                                                                             /o:CURLOption=WinSSL
                                                                             /o:SSHOption=ExternalOpenSSH
                                                                             /o:EnableSymlinks=Enabled
-                                                                            /o:EditorOption=VisualStudioCode
                                                                             /o:GitPullBehaviorOption=Rebase
                                                                             /Components=""icons,assoc,assoc_sh,gitlfs,windowsterminal"""
