@@ -6,7 +6,7 @@ if (!(Test-Elevated)) {
     $newProcess.WindowStyle = "hidden"
     [System.Diagnostics.Process]::Start($newProcess);
 
-    exit
+    exit $LASTEXITCODE
 }
 
 Set-UACLevel

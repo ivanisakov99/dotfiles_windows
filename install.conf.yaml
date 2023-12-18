@@ -1,44 +1,59 @@
-- defaults:
-    link:
-      relink: true
+# - defaults:
+#     link:
+#       relink: true
 
-- clean: ['~']
+# # - shell:
+# #   -
+# #     command: powershell
+
+# - clean: ['~']
 
 - link:
-    # Regular Powershell
-    ~/Documents/WindowsPowerShell/profile.ps1:
-        create: true
-        path: profiles/profile.ps1
-    ~/Documents/WindowsPowerShell/Modules:
-        create: true
-        glob: true
-        path: Modules/**
+  ~/.gitignore:
 
-    # Powershell 7
-    ~/Documents/PowerShell/profile.ps1:
-        create: true
-        path: profiles/profile.ps1
-    ~/Documents/PowerShell/Modules:
-        create: true
-        glob: true
-        path: Modules/**
+#     # Regular Powershell
+#     ~/Documents/WindowsPowerShell/profile.ps1:
+#         create: true
+#         path: profiles/profile.ps1
+#     ~/Documents/WindowsPowerShell/Modules:
+#         create: true
+#         glob: true
+#         path: Modules/**
 
-    # Visual Studio
-    ~/Documents/WindowsPowerShell/NuGet_profile.ps1:
-        path: profiles/NuGet_profile.ps1
+#     # Powershell 7
+#     ~/Documents/PowerShell/profile.ps1:
+#         create: true
+#         path: profiles/profile.ps1
+#     ~/Documents/PowerShell/Modules:
+#         create: true
+#         glob: true
+#         path: Modules/**
 
-    ~/.gitconfig:
-    ~/.editorconfig:
+#     # Visual Studio
+#     ~/Documents/WindowsPowerShell/NuGet_profile.ps1:
+#         path: profiles/NuGet_profile.ps1
 
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
+#     ~/.gitconfig:
+#     ~/.editorconfig:
 
-    - [powershell -file ./utils/disable_UAC.ps1, Turning off UAC for period of installation]
+# - shell:
+#     - [git submodule update --init --recursive, Installing submodules]
 
-    - [powershell -file ./dependencies/developer_tools.ps1, Installing developer tools]
+#     -
+#       command: powershell -file ./utils/disable_UAC.ps1
+#       description: Turning off UAC for period of installation
+#       stdout: true
+#       stderr: true
 
-    - [powershell -file ./dependencies/run_as_admin.ps1, Installing tools that require Admin access]
+#     - [powershell -file ./dependencies/developer_tools.ps1, Installing developer tools]
 
-    - [powershell -file ./dependencies/browsers.ps1, Installing browsers]
+#     - [powershell -file ./dependencies/run_as_admin.ps1, Installing tools that require Admin access]
 
-    - [powershell -file ./utils/enable_UAC.ps1, Turning UAC back on]
+#     - [powershell -file ./dependencies/browsers.ps1, Installing browsers]
+
+#     - [powershell -file ./utils/enable_UAC.ps1, Turning UAC back on]
+
+# - powershell:
+#   -
+#    command: Write-Output Hello
+#    admin: true

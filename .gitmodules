@@ -2,3 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "dotbot-powershel-test"]
+	path = dotbot-powershel-test
+	url = https://github.com/ivanisakov99/dotbot-powershel-test.git
